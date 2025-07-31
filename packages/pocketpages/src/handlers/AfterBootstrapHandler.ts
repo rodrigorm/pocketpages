@@ -240,6 +240,21 @@ export const AfterBootstrapHandler: PagesInitializerFunc = (e) => {
       return route
     })
     .filter((r) => r.segments.length > 0)
+    // Ensure static routes are evaluated before dynamic ones
+    // and keep ordering deterministic for equal cases.
+    .sort((a, b) => {
+      const countParams = (r: Route) =>
+        r.segments.reduce((count, seg) => count + (seg.paramName ? 1 : 0), 0)
+      // Fewer dynamic parameters means a more specific (static) route
+      const aParams = countParams(a)
+      const bParams = countParams(b)
+      if (aParams !== bParams) return aParams - bParams
+      // If parameter counts are equal, prefer deeper paths first
+      if (a.segments.length !== b.segments.length)
+        return b.segments.length - a.segments.length
+      // Stabilize sort for identical shapes using the route path
+      return a.relativePath.localeCompare(b.relativePath)
+    })
   dbg({ routes })
 
   dbg({ config })
