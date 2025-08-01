@@ -20,7 +20,16 @@ export const resolveRoute = (url: Url, routes: Route[]) => {
       .split('/')
       .filter((p) => p)
     // dbg(`incoming parts`, parts)
-    for (const route of routes) {
+    
+    // Sort routes to prioritize exact matches over parameter matches
+    // Routes with fewer parameter segments should be checked first
+    const sortedRoutes = [...routes].sort((a, b) => {
+      const aParamCount = a.segments.filter(s => s.paramName).length
+      const bParamCount = b.segments.filter(s => s.paramName).length
+      return aParamCount - bParamCount
+    })
+    
+    for (const route of sortedRoutes) {
       // dbg(`checking route`, route)
       const matched = route.segments.every((segment, i) => {
         const { nodeName, paramName } = segment
