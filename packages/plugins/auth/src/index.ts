@@ -204,6 +204,7 @@ const authPluginFactory: PluginFactory = (config) => {
         password: string,
         options?: Partial<AuthOptions>
       ) => {
+        console.log('###### signInWithPassword ######')
         const authData = pb()
           .collection(options?.collection ?? 'users')
           .authWithPassword(email, password) as AuthData

@@ -39,20 +39,20 @@
     },
     "packages/plugins/datastar": {
       "name": "pocketpages-plugin-datastar",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "dependencies": {
         "pocketpages-plugin-realtime": "workspace:>=0.2.0",
       },
       "devDependencies": {
         "pocketbase-jsvm": "^0.25.10001",
-        "pocketpages": "workspace:>=0.22.1",
+        "pocketpages": "workspace:>=0.22.2",
         "tsdown": "^0.12.7",
         "typescript": "^5.7.3",
       },
     },
     "packages/plugins/ejs": {
       "name": "pocketpages-plugin-ejs",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "dependencies": {
         "pocketbase-ejs": "^3.1.10006",
         "pocketbase-node": "^0.0.3",
@@ -61,7 +61,7 @@
       "devDependencies": {
         "@s-libs/micro-dash": "^18.0.0",
         "chokidar-cli": "^3.0.0",
-        "pocketpages": "workspace:>=0.22.1",
+        "pocketpages": "workspace:>=0.22.3",
         "tsdown": "^0.12.7",
         "typescript": "^5.7.3",
       },
@@ -70,6 +70,7 @@
       "name": "pocketpages-plugin-js-sdk",
       "version": "0.2.0",
       "dependencies": {
+        "pocketbase": "^0.26.2",
         "pocketbase-js-sdk-jsvm": "^0.25.10004",
       },
       "devDependencies": {
@@ -125,10 +126,10 @@
     },
     "packages/pocketpages": {
       "name": "pocketpages",
-      "version": "0.22.1",
+      "version": "0.22.3",
       "dependencies": {
         "pocketbase-log": "^0.0.2",
-        "pocketpages-plugin-ejs": "workspace:>=0.1.1",
+        "pocketpages-plugin-ejs": "workspace:>=0.1.2",
       },
       "devDependencies": {
         "@s-libs/micro-dash": "^18.0.0",
@@ -144,8 +145,9 @@
       "name": "pocketpages-site",
       "version": "0.0.2",
       "dependencies": {
-        "pocketpages": "workspace:>=0.20.0",
-        "pocketpages-plugin-datastar": "workspace:^0.1.2",
+        "pocketbase": "^0.26.2",
+        "pocketpages": "workspace:>=0.22.3",
+        "pocketpages-plugin-datastar": "workspace:^0.2.0",
         "pocketpages-plugin-marked": "workspace:>=0.1.0",
       },
       "devDependencies": {
@@ -196,7 +198,7 @@
     },
     "packages/starters/datastar": {
       "name": "pocketpages-starter-datastar",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "dependencies": {
         "pocketpages": "workspace:>=0.22.0",
         "pocketpages-plugin-datastar": "workspace:>=0.1.1",
@@ -971,7 +973,7 @@
 
     "pirates": ["pirates@4.0.6", "", {}, "sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg=="],
 
-    "pocketbase": ["pocketbase@0.25.2", "", {}, "sha512-ONZl1+qHJMnhR2uacBlBJ90lm7njtL/zy0606+1ROfK9hSL4LRBRc8r89rMcNRzPzRqCNyoFTh2Qg/lYXdEC1w=="],
+    "pocketbase": ["pocketbase@0.26.2", "", {}, "sha512-WA8EOBc3QnSJh8rJ3iYoi9DmmPOMFIgVfAmIGux7wwruUEIzXgvrO4u0W2htfQjGIcyezJkdZOy5Xmh7SxAftw=="],
 
     "pocketbase-ejs": ["pocketbase-ejs@3.1.10006", "", { "dependencies": { "pocketbase-node": "^0.0.2" } }, "sha512-OBt+qsE7APD2baer4sTddwC1UfhT1HwIt4I208v5IZ2RXncgd5d0Z/DwAZy5PEJrWscHn2qCob4GLiEiv6lvEQ=="],
 
@@ -1314,6 +1316,8 @@
     "phio/@inquirer/prompts": ["@inquirer/prompts@7.6.0", "", { "dependencies": { "@inquirer/checkbox": "^4.1.9", "@inquirer/confirm": "^5.1.13", "@inquirer/editor": "^4.2.14", "@inquirer/expand": "^4.0.16", "@inquirer/input": "^4.2.0", "@inquirer/number": "^3.0.16", "@inquirer/password": "^4.0.16", "@inquirer/rawlist": "^4.1.4", "@inquirer/search": "^3.0.16", "@inquirer/select": "^4.2.4" }, "peerDependencies": { "@types/node": ">=18" }, "optionalPeers": ["@types/node"] }, "sha512-jAhL7tyMxB3Gfwn4HIJ0yuJ5pvcB5maYUcouGcgd/ub79f9MqZ+aVnBtuFf+VC2GTkCBF+R+eo7Vi63w5VZlzw=="],
 
     "phio/fs-extra": ["fs-extra@11.3.0", "", { "dependencies": { "graceful-fs": "^4.2.0", "jsonfile": "^6.0.1", "universalify": "^2.0.0" } }, "sha512-Z4XaCL6dUDHfP/jT25jJKMmtxvuwbkrD1vNSMFlo9lNLY2c5FHYSQgHPRZUjAB26TpDEoW9HCOgplrdbaPV/ew=="],
+
+    "phio/pocketbase": ["pocketbase@0.25.2", "", {}, "sha512-ONZl1+qHJMnhR2uacBlBJ90lm7njtL/zy0606+1ROfK9hSL4LRBRc8r89rMcNRzPzRqCNyoFTh2Qg/lYXdEC1w=="],
 
     "pocketbase-ejs/pocketbase-node": ["pocketbase-node@0.0.2", "", {}, "sha512-DuTxkJbA+d6XVfm2QVCoJLyJWDJplzeSp+BU2eIA2H7902yAvVTx7bTSnjp1g/Y/QBtRrrGyXStvrMu3tKPXXw=="],
 
